@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+	<name>Content - Partilhator DOCman</name>
+	<author>José A. Cidre Bardelás</author>
+	<authorEmail>info@joomlaempresa.es</authorEmail>
+	<authorUrl>http://joomlaempresa.es</authorUrl>
+	<creationDate>02-2012</creationDate>
+	<copyright>Copyright (C) 2011 Joomla Empresa and José A. Cidre Bardelás - All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>1.1.0</version>
+	<description>DESCRIPTION_DESC</description>
+	<files>
+		<filename plugin="partilhatordocman">partilhatordocman.php</filename>
+		<filename>index.html</filename>
+		<folder>partilhatordocman</folder>
+	</files>
+	<languages folder="idiomas">
+		<language tag="gl-ES">gl-ES.plg_content_partilhatordocman.ini</language>
+		<language tag="gl-ES">gl-ES.plg_content_partilhatordocman.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_content_partilhatordocman.ini</language>
+		<language tag="en-GB">en-GB.plg_content_partilhatordocman.sys.ini</language>
+		<language tag="es-ES">es-ES.plg_content_partilhatordocman.ini</language>
+		<language tag="es-ES">es-ES.plg_content_partilhatordocman.sys.ini</language>
+		<language tag="ca-ES">ca-ES.plg_content_partilhatordocman.ini</language>
+		<language tag="ca-ES">ca-ES.plg_content_partilhatordocman.sys.ini</language>
+		<language tag="pt-BR">pt-BR.plg_content_partilhatordocman.ini</language>
+		<language tag="pt-BR">pt-BR.plg_content_partilhatordocman.sys.ini</language>
+		<language tag="pt-PT">pt-PT.plg_content_partilhatordocman.ini</language>
+		<language tag="pt-PT">pt-PT.plg_content_partilhatordocman.sys.ini</language>
+	</languages>
+	
+	<!-- Joomla 1.5 params -->
+	<params addpath="/plugins/content/partilhatordocman/elements">
+		<param type="titulo" default="DISPLAY_TIT" />
+		<param name="excluir_ligacoes" type="text" default="" label="EXCLUDE_LINK" description="EXCLUDE_LINK_DESC" />
+		<param type="titulo" default="POSITION_TIT" />
+		<param type="subtitulo" default="INPRODUCTPOS_TIT" />
+		<param name="posicom_produto" type="list" default="topo" label="POSITION" description="POSITION_DESC">
+			<option value="topo">TOP_OP</option>
+			<option value="pe">BOTTOM_OP</option>
+		</param>
+		<param name="alto_bloco_produto" type="text" size="4" default="90" label="BLOCK_HEIGHT" description="BLOCK_HEIGHT_DESC" />
+		<param name="amplo_bloco_produto" type="text" size="4" default="" label="BLOCK_WIDTH" description="BLOCK_WIDTH_DESC" />
+		<param name="margem_topo_produto" type="text" size="4" default="3" label="MARGIN_TOP" description="MARGIN_TOP_DESC" />
+		<param name="margem_pe_produto" type="text" size="4" default="3" label="MARGIN_BOTTOM" description="MARGIN_BOTTOM_DESC" />
+		<param name="margem_esquerda_produto" type="text" size="4" default="3" label="MARGIN_LEFT" description="MARGIN_LEFT_DESC" />
+		<param name="margem_direita_produto" type="text" size="4" default="3" label="MARGIN_RIGHT" description="MARGIN_RIGHT_DESC" />
+		<param name="tamanho_icones_produto" type="list" default="24" label="ICONS_SIZE" description="ICONS_SIZE_DESC">
+			<option value="18">18X18</option>
+			<option value="24">24X24</option>
+		</param>
+		<param name="alinhamento_icones_produto" type="list" default="left" label="ICONS_ALIGN" description="ICONS_ALIGN_DESC">
+			<option value="left">LEFT</option>
+			<option value="center">CENTER</option>
+			<option value="right">RIGHT</option>
+		</param>
+		<param name="espaco_icones_produto" type="text"  default="5" label="SPACE_BETWEEN_ICONS" description="SPACE_BETWEEN_ICONS_DESC" />
+		<param type="titulo" default="ICONS_TIT" />
+		<param name="ver_facebook" type="list" default="1" label="SHOW_FACEBOOK" description="SHOW_FACEBOOK_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_facebook_like" type="list" default="1" label="SHOW_FACEBOOKLIKE" description="SHOW_FACEBOOKLIKE_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_tuenti" type="list" default="1" label="SHOW_TUENTI" description="SHOW_TUENTI_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_twitter" type="list" default="1" label="SHOW_TWITTER" description="SHOW_TWITTER_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_twitter_conta" type="list" default="1" label="SHOW_TWITTERCOUNT" description="SHOW_TWITTERCOUNT_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_inshare" type="list" default="1" label="SHOW_INSHARE" description="SHOW_INSHARE_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ver_googleplus" type="list" default="1" label="SHOW_GPLUS" description="SHOW_GPLUS_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param type="subtitulo" default="TWITTERSHARECONF_TIT" />
+		<param name="mensagem_twitter" type="text"  default="" label="TWITTER_STATUS_MSG" description="TWITTER_STATUS_MSG_DESC" />
+		<param name="separator" type="list" default=":" label="TWITTER_SEP" description="TWITTER_SEP_DESC">
+			<option value=":"> : </option>
+			<option value="/"> / </option>
+			<option value="|"> | </option>
+			<option value="-"> - </option>
+			<option value="--"> -- </option>
+			<option value=","> , </option>
+		</param>
+		<param name="sitio_longo_twitter" type="text"  default="Web" label="TWITTER_LONG_NAME" description="TWITTER_LONG_NAME_DESC" />
+		<param name="sitio_curto_twitter" type="text"  default="Web" label="TWITTER_SHORT_NAME" description="TWITTER_SHORT_NAME_DESC" />
+		<param type="subtitulo" default="TWITTERTWEET_TIT" />
+		<param name="top_margin_twitter" type="text" size="8" default="2" label="TWITTER_TOPMARGIN" description="TWITTER_TOPMARGIN_DESC" />
+		<param name="bottom_margin_twitter" type="text" size="8" default="2" label="TWITTER_BOTTOMMARGIN" description="TWITTER_BOTTOMMARGIN_DESC" />
+		<param type="subtitulo" default="GOOGLEPLUSCONF_TIT" />
+		<param name="local_googleplus" type="text" size="8" default="" label="GPLUS_LOCALE" description="GPLUS_LOCALE_DESC" />
+		<param name="amplo_googleplus" type="text" size="4" default="" label="GPLUS_WIDTH" description="GPLUS_WIDTH_DESC" />
+		<param type="subtitulo" default="FACEBOOKCONF_TIT" />
+		<param name="local_facebook" type="text" size="8" default="" label="FACEBOOK_LOCALE" description="FACEBOOK_LOCALE_DESC" />
+		<param name="show_send_facebook" type="list" default="1" label="FACEBOOK_SHOWSEND" description="FACEBOOK_SHOWSEND_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="layout_facebook" type="list" default="1" label="FACEBOOK_LAYOUT" description="FACEBOOK_LAYOUT_DESC">
+			<option value="standard">STANDARD</option>
+			<option value="button_count">BUTTON_COUNT</option>
+			<option value="box_count">BOX_COUNT</option>
+		</param>
+		<param name="width_facebook" type="text" size="8" default="450" label="FACEBOOK_WIDTH" description="FACEBOOK_WIDTH_DESC" />
+		<param name="show_faces_facebook" type="list" default="1" label="FACEBOOK_SHOWFACES" description="FACEBOOK_SHOWFACES_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="verb_facebook" type="list" default="like" label="FACEBOOK_VERB" description="FACEBOOK_VERB_DESC">
+			<option value="like">LIKE</option>
+			<option value="recommend">RECOMMEND</option>
+		</param>
+		<param name="top_margin_facebook" type="text" size="8" default="5" label="FACEBOOK_TOPMARGIN" description="FACEBOOK_TOPMARGIN_DESC" />
+		<param name="bottom_margin_facebook" type="text" size="8" default="5" label="FACEBOOK_BOTTOMMARGIN" description="FACEBOOK_BOTTOMMARGIN_DESC" />
+		<param type="titulo" default="ORDER_TIT" />
+		<param name="ordenar_icones" type="list" default="0" label="ICONS_REORDER" description="ICONS_REORDER_DESC">
+			<option value="1">PYES</option>
+			<option value="0">PNO</option>
+		</param>
+		<param name="ordem_icones" type="text" default="1,2,3,4,5,6,7,8" label="ICONS_ORDER" description="ICONS_ORDER_DESC" />
+	</params>
+	
+	<!-- Joomla 1.7 params -->
+	<config>
+		<fields name="params" addfieldpath="/plugins/content/partilhatordocman/partilhatordocman/elements">
+			<fieldset name="basic">
+				<field type="titulo" default="DISPLAY_TIT" />
+				<field name="excluir_ligacoes" type="text" default="" label="EXCLUDE_LINK" description="EXCLUDE_LINK_DESC" />
+				<field type="titulo" default="POSITION_TIT" />
+				<field type="subtitulo" default="INPRODUCTPOS_TIT" />
+				<field name="posicom_produto" type="list" default="topo" label="POSITION" description="POSITION_DESC">
+					<option value="topo">TOP_OP</option>
+					<option value="pe">BOTTOM_OP</option>
+				</field>
+				<field name="alto_bloco_produto" type="text" size="4" default="90" label="BLOCK_HEIGHT" description="BLOCK_HEIGHT_DESC" />
+				<field name="amplo_bloco_produto" type="text" size="4" default="" label="BLOCK_WIDTH" description="BLOCK_WIDTH_DESC" />
+				<field name="margem_topo_produto" type="text" size="4" default="3" label="MARGIN_TOP" description="MARGIN_TOP_DESC" />
+				<field name="margem_pe_produto" type="text" size="4" default="3" label="MARGIN_BOTTOM" description="MARGIN_BOTTOM_DESC" />
+				<field name="margem_esquerda_produto" type="text" size="4" default="3" label="MARGIN_LEFT" description="MARGIN_LEFT_DESC" />
+				<field name="margem_direita_produto" type="text" size="4" default="3" label="MARGIN_RIGHT" description="MARGIN_RIGHT_DESC" />
+				<field name="tamanho_icones_produto" type="list" default="24" label="ICONS_SIZE" description="ICONS_SIZE_DESC">
+					<option value="18">18X18</option>
+					<option value="24">24X24</option>
+				</field>
+				<field name="alinhamento_icones_produto" type="list" default="left" label="ICONS_ALIGN" description="ICONS_ALIGN_DESC">
+					<option value="left">LEFT</option>
+					<option value="center">CENTER</option>
+					<option value="right">RIGHT</option>
+				</field>
+				<field name="espaco_icones_produto" type="text"  default="5" label="SPACE_BETWEEN_ICONS" description="SPACE_BETWEEN_ICONS_DESC" />
+				<field type="titulo" default="ICONS_TIT" />
+				<field name="ver_facebook" type="list" default="1" label="SHOW_FACEBOOK" description="SHOW_FACEBOOK_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_facebook_like" type="list" default="1" label="SHOW_FACEBOOKLIKE" description="SHOW_FACEBOOKLIKE_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_tuenti" type="list" default="1" label="SHOW_TUENTI" description="SHOW_TUENTI_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_twitter" type="list" default="1" label="SHOW_TWITTER" description="SHOW_TWITTER_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_twitter_conta" type="list" default="1" label="SHOW_TWITTERCOUNT" description="SHOW_TWITTERCOUNT_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_inshare" type="list" default="1" label="SHOW_INSHARE" description="SHOW_INSHARE_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ver_googleplus" type="list" default="1" label="SHOW_GPLUS" description="SHOW_GPLUS_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field type="subtitulo" default="TWITTERSHARECONF_TIT" />
+				<field name="mensagem_twitter" type="text"  default="" label="TWITTER_STATUS_MSG" description="TWITTER_STATUS_MSG_DESC" />
+				<field name="separator" type="list" default=":" label="TWITTER_SEP" description="TWITTER_SEP_DESC">
+					<option value=":"> : </option>
+					<option value="/"> / </option>
+					<option value="|"> | </option>
+					<option value="-"> - </option>
+					<option value="--"> -- </option>
+					<option value=","> , </option>
+				</field>
+				<field name="sitio_longo_twitter" type="text"  default="Web" label="TWITTER_LONG_NAME" description="TWITTER_LONG_NAME_DESC" />
+				<field name="sitio_curto_twitter" type="text"  default="Web" label="TWITTER_SHORT_NAME" description="TWITTER_SHORT_NAME_DESC" />
+				<field type="subtitulo" default="TWITTERTWEET_TIT" />
+				<field name="top_margin_twitter" type="text" size="8" default="2" label="TWITTER_TOPMARGIN" description="TWITTER_TOPMARGIN_DESC" />
+				<field name="bottom_margin_twitter" type="text" size="8" default="2" label="TWITTER_BOTTOMMARGIN" description="TWITTER_BOTTOMMARGIN_DESC" />
+				<field type="subtitulo" default="GOOGLEPLUSCONF_TIT" />
+				<field name="local_googleplus" type="text" size="8" default="" label="GPLUS_LOCALE" description="GPLUS_LOCALE_DESC" />
+				<field name="amplo_googleplus" type="text" size="4" default="" label="GPLUS_WIDTH" description="GPLUS_WIDTH_DESC" />
+				<field type="subtitulo" default="FACEBOOKCONF_TIT" />
+				<field name="local_facebook" type="text" size="8" default="" label="FACEBOOK_LOCALE" description="FACEBOOK_LOCALE_DESC" />
+				<field name="show_send_facebook" type="list" default="1" label="FACEBOOK_SHOWSEND" description="FACEBOOK_SHOWSEND_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="layout_facebook" type="list" default="1" label="FACEBOOK_LAYOUT" description="FACEBOOK_LAYOUT_DESC">
+					<option value="standard">STANDARD</option>
+					<option value="button_count">BUTTON_COUNT</option>
+					<option value="box_count">BOX_COUNT</option>
+				</field>
+				<field name="width_facebook" type="text" size="8" default="450" label="FACEBOOK_WIDTH" description="FACEBOOK_WIDTH_DESC" />
+				<field name="show_faces_facebook" type="list" default="1" label="FACEBOOK_SHOWFACES" description="FACEBOOK_SHOWFACES_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="verb_facebook" type="list" default="like" label="FACEBOOK_VERB" description="FACEBOOK_VERB_DESC">
+					<option value="like">LIKE</option>
+					<option value="recommend">RECOMMEND</option>
+				</field>
+				<field name="top_margin_facebook" type="text" size="8" default="5" label="FACEBOOK_TOPMARGIN" description="FACEBOOK_TOPMARGIN_DESC" />
+				<field name="bottom_margin_facebook" type="text" size="8" default="5" label="FACEBOOK_BOTTOMMARGIN" description="FACEBOOK_BOTTOMMARGIN_DESC" />
+				<field type="titulo" default="ORDER_TIT" />
+				<field name="ordenar_icones" type="list" default="0" label="ICONS_REORDER" description="ICONS_REORDER_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="ordem_icones" type="text" default="1,2,3,4,5,6,7,8" label="ICONS_ORDER" description="ICONS_ORDER_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</install>
+ 
